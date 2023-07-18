@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+*{
+    font-family: Inter;
+}
+
+body{
+    background: #ECECEC;
+}
+
+.navigation-bar{
+    border: 1px solid #1F2428;
+    background: #1F2428;
+    padding: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+}
+
+.nav-link{
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero{
+    background: #1F2428;
+    height: 800px;
+    color: #fff;
+}
+
+#profile_pic{
+    width: 290px;
+    height: 292px;
+    object-fit: cover;
+}
+
+.hero-content{
+    width: 800px;
+    margin: 0 auto;
+    padding: 5em;
+}
+
+.hero-content-intro{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    gap:2em;
+}
+
+.intro-name{
+    font-family: Inter;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.hero-content-subsection{
+    align-items: center;
+}
+.hero-content-subsection h3{
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: -2px;
+}
+.hero-content-subsection p{
+    font-size: 15px;
+    font-weight: 400;
+    width: 450px;
+}
+
+.container{
+    margin: 0 5em;
+}
+
+.projet-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.projetContent{
+    width: 350px;
+    height: 450px;
+    background: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+}
+
+.projetIamage-content{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+}
+
+.projetIamage-content img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.projetContent h3{
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+    align-items: center;
+}
+
+.about-me{
+    margin: 8em 20em;
+}
+.about-me p{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.skills{
+    margin: 8em 35em;
+    background-color: #fff;
+    width: 627px;
+    padding: 30px;
+    align-items: center;
+}
+.skills h1{
+    margin-left: 185px;
+}
+
+.skill-description{
+    margin-left: 15em;
+}
+
+.skill-description p{
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.sprache{
+    margin-top: 40px;
+}
+
+.sprache p{
+    color: #515151;
+    font-size: 10px;
+    width: 320px;
+    font-weight: 400;
+}
+
+.framework span{
+    font-size: 12.5px;
+    padding: 4px;
+}
+.framework .s1{
+    background: #57A7E2;
+}
+.framework .s2{
+    background: #38B4DB;
+}
+.framework .s3{
+    background: #E1B441;
+}
