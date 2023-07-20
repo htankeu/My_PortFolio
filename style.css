@@ -35,6 +35,7 @@ body{
 #profile_pic{
     width: 290px;
     height: 292px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
