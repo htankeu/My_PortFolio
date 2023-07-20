@@ -85,8 +85,8 @@ body{
 }
 
 .projetContent{
-    width: 350px;
-    height: 450px;
+    width: 30%;
+    height: 12%;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -118,7 +118,7 @@ body{
     margin: 8em 20em;
 }
 .about-me p{
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -265,4 +265,120 @@ footer{
 }
 footer span:nth-child(1){
     color: #57A7E2;
+}
+
+@media(max-width:900px) {
+    .hero-content-intro{
+        flex-direction: column;
+    }
+
+    .hero{
+        background: #1F2428;
+        height: 800px;
+        color: #fff;
+    }
+    
+    #profile_pic{
+        width: 190px;
+        height: 192px;
+    }
+    
+    .hero-content{
+        width: 200px;
+        /* margin: 0 auto;
+        padding: 5em; */
+    }
+    
+    
+    .intro-name{
+        font-family: Inter;
+        font-size: 42px;
+    }
+    
+    .hero-content-subsection{
+        align-items: center;
+    }
+    .hero-content-subsection h3{
+        font-size: 20px;
+        /* font-weight: 400;
+        margin-bottom: -2px; */
+    }
+    .hero-content-subsection p{
+        font-size: 15px;
+        width: inherit;
+    }
+
+    .projet-container{
+        flex-direction: column;
+        gap:15px;
+    }
+    .projetContent{
+        width: 100%;
+    }
+
+    .about-me{
+        margin: 5em 0em;
+    }
+    .about-me p{
+        font-size: 14px;
+    }
+
+    .skills{
+        margin: 8em 0em 5em -5em;
+        background-color: #fff;
+        width: 140%;
+        /* padding: 150px; */
+        align-items: center;
+    }
+    .skills h1{
+        margin-left: 0px;
+        text-align: center;
+    }
+    
+    .skill-description{
+        margin-left: 0em;
+    }
+    
+    .skill-description p{
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .contact{
+        width: 100%;
+    }
+
+    .contact-container{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2,1fr);
+        width: 100%;
+    }
+    .contact .infos{
+        font-size: 12px;
+        font-weight: 600;
+        text-align: left;
+        padding: 0 0px;
+    }
+
+    .perso_info{
+        text-align: left;
+        padding-left: 0em;
+    }
+    
+
+    .fields{
+        display: flex;
+        flex-direction: row;
+        gap:20px;
+        align-items: center;
+        padding: 0 0px;
+        margin-bottom: 10px;
+    }
+    .field div{
+        margin: 0 0px;
+    }
+    
+    .subT{
+        margin-right: 10%;
+    }
 }
