@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+*{
+    font-family: Inter;
+}
+
+body{
+    background: #ECECEC;
+}
+
+.navigation-bar{
+    border: 1px solid #1F2428;
+    background: #1F2428;
+    padding: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+}
+
+.nav-link{
+    color: #fff;
+    text-decoration: none;
+}
+.nav-link:hover{
+    color: #57A7E2;
+    transform: scale(1.2);
+    text-decoration: none;
+}
+
+.hero{
+    background: #1F2428;
+    height: 800px;
+    color: #fff;
+}
+
+#profile_pic{
+    width: 290px;
+    height: 292px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.hero-content{
+    width: 800px;
+    margin: 0 auto;
+    padding: 5em;
+}
+
+.hero-content-intro{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    gap:2em;
+}
+
+.intro-name{
+    font-family: Inter;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.hero-content-subsection{
+    align-items: center;
+}
+.hero-content-subsection h3{
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: -2px;
+}
+.hero-content-subsection p{
+    font-size: 15px;
+    font-weight: 400;
+    width: 450px;
+}
+
+.container{
+    margin: 0 5em;
+}
+
+.projet-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.projetContent{
+    width: 30%;
+    height: 12%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.projetContent:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.projetIamage-content{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+}
+
+.projetIamage-content img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.projetContent h3{
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+}
+
+.about-me{
+    margin: 8em 20em;
+}
+.about-me p{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.skills{
+    margin: 8em 35em;
+    background-color: #fff;
+    width: 627px;
+    padding: 30px;
+    align-items: center;
+}
+.skills h1{
+    margin-left: 185px;
+}
+
+.skill-description{
+    margin-left: 15em;
+}
+
+.skill-description p{
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.sprache{
+    margin-top: 40px;
+}
+
+.sprache p{
+    color: #515151;
+    font-size: 10px;
+    width: 320px;
+    font-weight: 400;
+}
+
+.framework span{
+    font-size: 12.5px;
+    padding: 4px;
+}
+.framework .s1{
+    background: #57A7E2;
+}
+.framework .s2{
+    background: #38B4DB;
+}
+.framework .s3{
+    background: #E1B441;
+}
+
+.contact{
+    text-align: center;
+}
+.contact .infos{
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    padding: 0 95px;
+}
+
+.contact-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.perso_info{
+    text-align: left;
+    padding-left: 11em;
+}
+
+.perso_info div h4{
+    margin-bottom: -12px;
+}
+
+.perso_info div p{
+    color: #515151;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.fields{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    align-items: center;
+    padding: 0 198px;
+    margin-bottom: 10px;
+}
+
+.fields input{
+    border: 0;
+    border-bottom: 2px solid #333;
+    font-size: 11px;
+    font-family: inherit;
+    padding: 7px 20px;
+    outline: none;
+    transition: all .3s ease-in;
+}
+.fields input:focus, .fields input:valid{
+    border-bottom-color:rgb(99, 228, 228);
+}
+
+.fields label{
+    font-size: 10px;
+    /* position: absolute; */
+    top: 15px;
+    left: 0;
+    z-index: 2;
+}
+.fields input:focus + label, .fields input:valid ~ label{
+    color: rgb(99, 228, 228);
+    transform: translateY(-40px);
+    transition: all 0.5s ease;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.textarea input,textarea{
+    border: 2px solid #1F2428;
+}
+.textarea input{
+    padding: 7px 0;
+}
+
+.field div{
+    margin: 0 190px;
+}
+
+.button button{
+    color: #fff;
+    background-color: #1F2428;
+    padding: 7px 12px;
+}
+
+footer{
+    margin-top: 20px;
+    background-color: #1F2428;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    padding: 12px 0;
+}
+footer span:nth-child(1){
+    color: #57A7E2;
+}
+
+@media(max-width:900px) {
+    .hero-content-intro{
+        flex-direction: column;
+    }
+
+    .hero{
+        background: #1F2428;
+        height: 800px;
+        color: #fff;
+    }
+    
+    #profile_pic{
+        width: 190px;
+        height: 192px;
+    }
+    
+    .hero-content{
+        width: 200px;
+        /* margin: 0 auto;
+        padding: 5em; */
+    }
+    
+    
+    .intro-name{
+        font-family: Inter;
+        font-size: 42px;
+    }
+    
+    .hero-content-subsection{
+        align-items: center;
+    }
+    .hero-content-subsection h3{
+        font-size: 20px;
+        /* font-weight: 400;
+        margin-bottom: -2px; */
+    }
+    .hero-content-subsection p{
+        font-size: 15px;
+        width: inherit;
+    }
+
+    .projet-container{
+        flex-direction: column;
+        gap:15px;
+    }
+    .projetContent{
+        width: 100%;
+    }
+
+    .about-me{
+        margin: 5em 0em;
+    }
+    .about-me p{
+        font-size: 14px;
+    }
+
+    .skills{
+        margin: 8em 0em 5em -5em;
+        background-color: #fff;
+        width: 140%;
+        /* padding: 150px; */
+        align-items: center;
+    }
+    .skills h1{
+        margin-left: 0px;
+        text-align: center;
+    }
+    
+    .skill-description{
+        margin-left: 0em;
+    }
+    
+    .skill-description p{
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .contact{
+        width: 100%;
+    }
+
+    .contact-container{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2,1fr);
+        width: 100%;
+    }
+    .contact .infos{
+        font-size: 12px;
+        font-weight: 600;
+        text-align: left;
+        padding: 0 0px;
+    }
+
+    .perso_info{
+        text-align: left;
+        padding-left: 0em;
+    }
+    
+
+    .fields{
+        display: flex;
+        flex-direction: row;
+        gap:20px;
+        align-items: center;
+        padding: 0 0px;
+        margin-bottom: 10px;
+    }
+    .field div{
+        margin: 0 0px;
+    }
+    
+    .subT{
+        margin-right: 10%;
+    }
+}
