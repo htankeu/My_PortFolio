@@ -82,6 +82,8 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap:50px;
 }
 
 .projetContent{
@@ -157,15 +159,15 @@ body{
     font-size: 12.5px;
     padding: 4px;
 }
-.framework .s1{
-    background: #57A7E2;
-}
-.framework .s2{
-    background: #38B4DB;
-}
-.framework .s3{
-    background: #E1B441;
-}
+/*.framework .s1{*/
+/*    background: #57A7E2;*/
+/*}*/
+/*.framework .s2{*/
+/*    background: #38B4DB;*/
+/*}*/
+/*.framework .s3{*/
+/*    background: #E1B441;*/
+/*}*/
 
 .contact{
     text-align: center;
