@@ -1,12 +1,6 @@
 {% extends 'base/main.html' %}
 {% load static %}
 {% block content %}
-    <!-- navigation-Menu -->
-    <section class="navigation-bar">
-        <a class="nav-link" href="#skills">Courses</a>
-        <a class="nav-link" href="#projets">Projects</a>
-        <a class="nav-link" href="#contact">Contact</a>
-    </section>
 
     <!-- hero-Menu -->
     <section class="hero">
@@ -34,8 +28,10 @@
                 {% for project in projects%}
                 <div class="projetContent">
                     <div class="projetIamage-content">
-                        <img src="{{ project.thumbnail }}" alt="anmeldungPage of app">
-                        <img src="{{ project.thumbnail2 }}" alt="homePage of app">
+                        <a href="{% url 'project' project.id %}">
+                            <img src="{{ project.thumbnail }}" alt="anmeldungPage of app">
+                            <img src="{{ project.thumbnail2 }}" alt="homePage of app">
+                        </a>
                     </div>
                     <h3 class="description">{{ project.title }}</h3>
                 </div>

@@ -103,7 +103,7 @@ body{
     grid-template-rows: repeat(2,1fr);
 }
 
-.projetIamage-content img{
+.projetIamage-content a img{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -256,6 +256,14 @@ body{
     background-color: #1F2428;
     padding: 7px 12px;
 }
+
+/*Css for a shown of one project*/
+.oneProject img{
+    width: 60%;
+    height:40%;
+    object-fit: cover;
+}
+
 
 footer{
     margin-top: 20px;

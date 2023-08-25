@@ -8,6 +8,10 @@ def homePage(request):
     projects = Project.objects.all()
     skills = Skill.objects.all()
     sprachSkills = SprachSkills.objects.all()
-    return render(request,'base/index.html',{'projects':projects,
-                                             'skills':skills,
-                                             'sprachSkills':sprachSkills})
+    context = {'projects': projects, 'skills': skills, 'sprachSkills': sprachSkills}
+    return render(request, 'base/index.html', context)
+
+def projectPage(request, pk):
+    project = Project.objects.get(id=pk)
+
+    return render(request, 'base/project.html', {'project': project})

@@ -1,0 +1,13 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+    
+    <div class="oneProject">
+        <img src="{{  project.thumbnail.url }}" alt="{{ project.id }}">
+
+        <h1>{{ project.title }}</h1>
+
+        <hr>
+        <p>{{ project.body }}</p>
+    </div>
+{% endblock content %}
