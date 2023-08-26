@@ -3,6 +3,7 @@
 {% block content %}
     
     <div class="oneProject">
+        <a class="btn btn-warning" href="{% url 'edit-project' project.id %}">Edit</a>
         <img src="{{  project.thumbnail.url }}" alt="{{ project.id }}">
 
         <h1>{{ project.title }}</h1>

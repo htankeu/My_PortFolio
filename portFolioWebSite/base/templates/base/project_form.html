@@ -1,0 +1,22 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+        <h1>Add a new Project</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="mb-3">
+                    <label for="aa" class="from-label">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+
+            <input class="btn btn-primary" type="submit" value="submit">
+        </form>
+    </div>
+
+{% endblock %}
