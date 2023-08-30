@@ -1,14 +1,14 @@
 {% extends 'base/main.html' %}
 {% load static %}
 {% block content %}
-    
+            <a class="btn btn-warning" href="{% url 'edit-project' project.id %}">Edit</a>
+
     <div class="oneProject">
-        <a class="btn btn-warning" href="{% url 'edit-project' project.id %}">Edit</a>
         <img src="{{  project.thumbnail.url }}" alt="{{ project.id }}">
 
         <h1>{{ project.title }}</h1>
 
         <hr>
-        <p>{{ project.body }}</p>
+        <p>{{ project.body| safe}}</p>
     </div>
 {% endblock content %}
