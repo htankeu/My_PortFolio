@@ -257,6 +257,17 @@ body{
     padding: 7px 12px;
 }
 
+.form-label{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact--form{
+    display: block;
+    max-width: 600px;
+    margin:0 auto ;
+}
+
 /*Css for a shown of one project*/
 .oneProject{
     align-items: center;

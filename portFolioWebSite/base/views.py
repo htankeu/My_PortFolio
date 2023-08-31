@@ -1,6 +1,7 @@
-from django.shortcuts import render,redirect
-from .models import Project, Skill, SprachSkills
-from .form import ProjectForm
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from .models import Project, Skill, SprachSkills, Message
+from .form import ProjectForm, MessageForm
 
 # Create your views here.
 
@@ -9,7 +10,15 @@ def homePage(request):
     projects = Project.objects.all()
     skills = Skill.objects.all()
     sprachSkills = SprachSkills.objects.all()
-    context = {'projects': projects, 'skills': skills, 'sprachSkills': sprachSkills}
+    form = MessageForm()
+
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Message is successfully sent')
+
+    context = {'projects': projects, 'skills': skills, 'sprachSkills': sprachSkills, 'messageForm': form}
     return render(request, 'base/index.html', context)
 
 def projectPage(request, pk):
@@ -40,3 +49,18 @@ def editProject(request, pk):
             return redirect('home')
 
     return render(request, 'base/project_form.html', {'form': form})
+
+
+def inboxPage(request):
+    message = Message.objects.all().order_by('is_read')
+    unreadCount = Message.objects.filter(is_read=False).count()
+
+    context = {'inbox': message, 'unreadcount': unreadCount}
+    return render(request, 'base/inbox.html', context)
+
+
+def messagePage(request, pk):
+    message = Message.objects.get(id=pk)
+    message.is_read = True
+    message.save()
+    return render(request, 'base/message.html', {'message': message})

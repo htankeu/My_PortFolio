@@ -71,7 +71,7 @@
 
                     {% if sprachSkill.title == aSkill.title %}
 
-                    <span class="s1" style="background-color: {{ sprachSkill.color }}">{{ sprachSkill.body }}</span>
+                    <span class="s1" style="background-color: {{ sprachSkill.bg_color }}">{{ sprachSkill.body }}</span>
 
                     {% endif %}
 
@@ -115,30 +115,21 @@
                 </div>
             </div>
 
-            <div class="contact-formular">
+            <div class="container">
                 <h3>Write Me</h3>
 
-                <form action="#">
-                    <div class="fields">
-                        <div class="field name">
-                            <input type="text" placeholder="" required>
-                            <label for="name">Name</label>
+                <form class="contact--form" action="#" method="POST">
+                    {% csrf_token %}
+            {#        to show the CKEditor into the page of edit#}
+                    {{ form.media }}
+                    {% for field in messageForm %}
+                        <div class="mb-3">
+                            <label for="aa" class="form-label">{{ field.label }}</label>
+                            {{ field }}
                         </div>
-                        <div class="field email">
-                            <input type="email" placeholder="" required>
-                            <label for="email">Email</label>
-                        </div>  
-                    </div>
-                    <div class="field subT">
-                        <div class="field textarea">
-                            <input type="text" placeholder="subject" required>
+                    {% endfor %}
 
-                            <textarea cols="30" rows="10" placeholder="Describe Project..." required></textarea>
-                        </div>
-                        <div class="button">
-                            <button type="submit" onclick="alert('Nachricht gesendet')">SUBMIT</button>
-                        </div>
-                    </div>
+                <input class="btn btn-primary" type="submit" value="submit">
                 </form>
         </div>
     </section>
