@@ -7,6 +7,7 @@
 {#        will show only when the user is authentificated#}
         {% if not request.user.is_authentificated %}
         <a class="nav-lin" href="{% url 'add-project' %}">Add Project</a>
+        <a class="nav-lin" href="{% url 'add-skill' %}">Add Skill</a>
         <a class="nav-lin" href="{% url 'inbox' %}">Inbox</a>
         {% endif %}
     </section>

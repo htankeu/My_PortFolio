@@ -9,4 +9,5 @@ urlpatterns = [
     path('editProject/<str:pk>/', views.editProject, name="edit-project"),
     path('inbox/', views.inboxPage, name="inbox"),
     path('message/<str:pk>/', views.messagePage, name="message"),
+    path('addSkill/', views.addSkill, name="add-skill"),
 ]

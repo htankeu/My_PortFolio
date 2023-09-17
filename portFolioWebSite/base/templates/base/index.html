@@ -27,10 +27,10 @@
 
                 {% for project in projects%}
                 <div class="projetContent">
-                    <div class="projetIamage-content">
+                    <div class="projetImage-content">
                         <a href="{% url 'project' project.id %}">
                             <img src="{{ project.thumbnail }}" alt="anmeldungPage of app">
-                            <img src="{{ project.thumbnail2 }}" alt="homePage of app">
+{#                            <img src="{{ project.thumbnail2 }}" alt="homePage of app">#}
                         </a>
                     </div>
                     <h3 class="description">{{ project.title }}</h3>
