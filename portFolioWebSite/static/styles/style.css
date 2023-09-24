@@ -4,8 +4,22 @@
 }
 
 body{
-    background: #ECECEC;
+    background: #9a9999;
 }
+
+.containPart{
+    background-color: #d9d6d6;
+    padding: 30px 90px;
+    margin: 30px 0;
+}
+
+.my-t{
+    background-color: #FFFFFF;
+}
+
+/*section{*/
+/*    background: #9a9999;*/
+/*}*/
 
 .navigation-bar{
     border: 1px solid #1F2428;
@@ -80,15 +94,18 @@ body{
 
 .projet-container{
     display: flex;
+    height: 350px;
     flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap:50px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    min-width: 400px;
+    padding: 30px 0;
+    gap:20px;
 }
 
 .projetContent{
-    width: 30%;
-    height: 12%;
+    width: 50%;
+    height: 250px;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -98,13 +115,12 @@ body{
     cursor: pointer;
 }
 
-.projetIamage-content{
-    display: grid;
-    grid-template-rows: repeat(2,1fr);
+.projetImage-content{
+    width: 100%;
 }
 
-.projetIamage-content a img{
-    height: 100%;
+.projetImage-content a img{
+    height: 200px;
     width: 100%;
     object-fit: cover;
 }
@@ -117,7 +133,7 @@ body{
 }
 
 .about-me{
-    margin: 8em 20em;
+    margin: 3em 10em;
 }
 .about-me p{
     font-size: 16px;
@@ -184,13 +200,26 @@ body{
     grid-template-columns: repeat(2,1fr);
 }
 
+.contact-informations{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .perso_info{
     text-align: left;
     padding-left: 11em;
 }
 
+perso_info div{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
 .perso_info div h4{
-    margin-bottom: -12px;
+    /*margin-bottom: -12px;*/
 }
 
 .perso_info div p{
@@ -268,10 +297,38 @@ body{
     margin:0 auto ;
 }
 
+.container-endorsement{
+    background-color: #cecece;
+    padding: 15px 0;
+    margin-bottom: 50px;
+}
+
+.endorsement{
+    padding: 10px 0px;
+    margin: 30px 30px;
+}
+
+.endor-sub, .sub-comment{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.endorBt{
+    margin-right: 15px;
+}
+
+.endor-sub h5 a{
+    text-decoration: none;
+    font-style: italic;
+}
+
 /*Css for a shown of one project*/
 .oneProject{
     align-items: center;
     text-align: center;
+    background-color: #b7b7b7;
+    padding-bottom: 80px;
 }
 .oneProject img{
     width: 60%;
@@ -299,6 +356,21 @@ footer span:nth-child(1){
     color: #57A7E2;
 }
 
+/*project css*/
+.comment-count{
+  text-align: left;
+}
+
+.comment-card{
+    text-align: left;
+    margin-bottom: 20px;
+}
+.comment-text{
+    margin-left: 35px;
+}
+
+
+
 @media(max-width:900px) {
     .hero-content-intro{
         flex-direction: column;
@@ -309,24 +381,24 @@ footer span:nth-child(1){
         height: 800px;
         color: #fff;
     }
-    
+
     #profile_pic{
         width: 190px;
         height: 192px;
     }
-    
+
     .hero-content{
         width: 200px;
         /* margin: 0 auto;
         padding: 5em; */
     }
-    
-    
+
+
     .intro-name{
         font-family: Inter;
         font-size: 42px;
     }
-    
+
     .hero-content-subsection{
         align-items: center;
     }
@@ -366,11 +438,11 @@ footer span:nth-child(1){
         margin-left: 0px;
         text-align: center;
     }
-    
+
     .skill-description{
         margin-left: 0em;
     }
-    
+
     .skill-description p{
         font-size: 10px;
         font-weight: 400;
@@ -396,7 +468,7 @@ footer span:nth-child(1){
         text-align: left;
         padding-left: 0em;
     }
-    
+
 
     .fields{
         display: flex;
@@ -409,7 +481,7 @@ footer span:nth-child(1){
     .field div{
         margin: 0 0px;
     }
-    
+
     .subT{
         margin-right: 10%;
     }

@@ -4,11 +4,46 @@
             <a class="btn btn-warning" href="{% url 'edit-project' project.id %}">Edit</a>
 
     <div class="oneProject">
+
         <img src="{{  project.thumbnail.url }}" alt="{{ project.id }}">
 
         <h1>{{ project.title }}</h1>
 
         <hr>
         <p>{{ project.body| safe}}</p>
+
+        <div class="comments-container">
+            <h3 class="comment-count">Comments : ({{ count }})</h3>
+            <hr>
+
+            <div class="container">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+        {#        to show the CKEditor into the page of edit#}
+                    {{ form.media }}
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label for="aa" class="form-label">{{ field.label }}</label>
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+
+                    <input class="btn btn-primary" type="submit" value="Add a new Comment">
+                </form>
+            </div>
+
+            <hr>
+
+            {% for comment in comments %}
+                <div class=" container card my-t comment-card">
+                    <div class="card-body">
+                        <h3>User: {{ comment.name }}</h3>
+                        <p class="comment-text">{{ comment.body }}</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
     </div>
 {% endblock content %}

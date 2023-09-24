@@ -19,7 +19,7 @@
     </section>
 
     <!-- container-part -->
-    <section class="container">
+    <section class="container containPart">
         <div class="projets" id="projets">
             <h1 class="div_title">My Projects</h1>
 
@@ -30,7 +30,6 @@
                     <div class="projetImage-content">
                         <a href="{% url 'project' project.id %}">
                             <img src="{{ project.thumbnail }}" alt="anmeldungPage of app">
-{#                            <img src="{{ project.thumbnail2 }}" alt="homePage of app">#}
                         </a>
                     </div>
                     <h3 class="description">{{ project.title }}</h3>
@@ -86,23 +85,36 @@
         </div>
     </section>
 
+    <section class="container-endorsement">
+        <div class="sub-container endor-sub">
+            <h3 class="div_title">Endorsements</h3>
+            <h5 class="btn btn-primary endorBt"><i class="bi bi-plus"></i><a class="nav-lin" href="{% url 'add-endorsement' %}">Add Endorsement</a></h5>
+        </div>
+
+            {% for i in endorsements %}
+            <div class="container card my-t endorsement">
+
+                <h5>{{ i.name }}</h5>
+                <p>{{ i.body }} </p>
+
+            </div>
+            {% empty %}
+            {% endfor %}
+
+        </div>
+    </section>
+
     <!-- contact-part -->
     <section class="contact" id="contact">
         <h1 class="div_title">Contact Me</h1>
 
         <div class="contact-container">
             <div class="contact-informations">
-                <h3>Get In Touch</h3>
                 <p class="infos">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
 
                 <div class="perso_info">
-                    <div class="name">
-                        <h4>Name</h4>
-                        <p>Joel Yvan Heda Tankeu</p>
-                    </div>
-
                     <div class="adress">
                         <h4>Address</h4>
                         <p>Bebelstraße 22, 67549 Worms</p>

@@ -61,3 +61,23 @@ class Message(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Endorsement(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    body = models.TextField()
+    featured = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False, null=True)
+
+    def __str__(self):
+        return self.body[0:50]
+
+class comment(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    body = models.TextField(null=True, blank=True)
+    created = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return self.name

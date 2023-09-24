@@ -1,0 +1,25 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+        <h1>Add a Endorsement</h1>
+
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form.media }}
+            {% for field in form %}
+                <div class="mb-3">
+                    <label for="aa" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+
+            <input class="btn btn-primary" type="submit" value="submit">
+
+        </form>
+    </div>
+
+{% endblock content %}

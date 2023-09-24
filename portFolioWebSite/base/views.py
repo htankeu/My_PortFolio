@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from .models import Project, Skill, SprachSkills, Message
-from .form import ProjectForm, MessageForm, SkillForm
+from .models import Project, Skill, SprachSkills, Message, Endorsement
+from .form import ProjectForm, MessageForm, SkillForm, EndorsementForm, commentForm
 
 # Create your views here.
 
@@ -10,6 +10,7 @@ def homePage(request):
     projects = Project.objects.all()
     skills = Skill.objects.all()
     sprachSkills = SprachSkills.objects.all()
+    endorsements = Endorsement.objects.filter(approved=True)
     form = MessageForm()
 
     if request.method == 'POST':
@@ -18,13 +19,27 @@ def homePage(request):
             form.save()
             messages.success(request, 'Message is successfully sent')
 
-    context = {'projects': projects, 'skills': skills, 'sprachSkills': sprachSkills, 'messageForm': form}
+    context = {'projects': projects, 'skills': skills, 'sprachSkills': sprachSkills, 'messageForm': form, 'endorsements':endorsements}
     return render(request, 'base/index.html', context)
 
 def projectPage(request, pk):
     project = Project.objects.get(id=pk)
+    count = project.comment_set.count()
+    comments = project.comment_set.all().order_by('-created')
+    form = commentForm()
 
-    return render(request, 'base/project.html', {'project': project})
+    if request.method == 'POST':
+        form = commentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.project = project
+            comment.save()
+            messages.success(request, "Thanks for Comment!")
+            redirect('project')
+
+    context = {'project': project, 'count': count, 'comments': comments, 'form': form}
+
+    return render(request, 'base/project.html', context)
 
 def addProject(request):
     form = ProjectForm()
@@ -75,3 +90,14 @@ def addSkill(request):
             return redirect('home')
     context = {'form':form}
     return render(request, 'base/skill_form.html', context)
+
+def addEndorsements(request):
+    form = EndorsementForm()
+    if(request.method == 'POST'):
+        form = EndorsementForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you, your endorsement was successfully added!")
+            return redirect('home')
+    context = {'form': form}
+    return render(request, 'base/endorsement_form.html', context)
