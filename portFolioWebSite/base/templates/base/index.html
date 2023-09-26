@@ -62,8 +62,16 @@
 
             {% for aSkill in skills %}
             <div class="sprache">
-                <h5>{{ aSkill.title }}</h5>
-                <p>{{ aSkill.body }} </p>
+
+                <div class="logo_sprache">
+                    {% if aSkill.logo %}
+                        <img src="{{ aSkill.logo }}" alt="logo">
+                    {% endif %}
+                    <div>
+                        <h5>{{ aSkill.title }}</h5>
+                        <p>{{ aSkill.body }} </p>
+                    </div>
+                </div>
 
                 <div class="framework">
                 {% for sprachSkill in sprachSkills %}

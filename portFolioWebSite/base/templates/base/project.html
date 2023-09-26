@@ -37,8 +37,9 @@
             {% for comment in comments %}
                 <div class=" container card my-t comment-card">
                     <div class="card-body">
-                        <h3>User: {{ comment.name }}</h3>
-                        <p class="comment-text">{{ comment.body }}</p>
+                        <h3>{{ comment.name }}</h3>
+                        <small>{{ comment.created| timesince }} ago</small>
+                        <p class="my-3 comment-text">{{ comment.body }}</p>
                     </div>
                 </div>
 

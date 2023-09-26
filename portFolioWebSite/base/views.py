@@ -35,7 +35,6 @@ def projectPage(request, pk):
             comment.project = project
             comment.save()
             messages.success(request, "Thanks for Comment!")
-            redirect('project')
 
     context = {'project': project, 'count': count, 'comments': comments, 'form': form}
 

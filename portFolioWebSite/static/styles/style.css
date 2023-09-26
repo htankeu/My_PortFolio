@@ -163,6 +163,15 @@ body{
 .sprache{
     margin-top: 40px;
 }
+.sprache .logo_sprache{
+    display: flex;
+    flex-direction: row;
+}
+.sprache .logo_sprache img{
+    width: 25%;
+    height: 40%;
+    object-fit: cover;
+}
 
 .sprache p{
     color: #515151;
